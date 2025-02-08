@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:hackathena_25/models/font_helper.dart';
+import 'package:hackathena_25/views/team_list.dart';
+import '../controllers/auth_service.dart';
 
 class LoginPage extends StatelessWidget {
   final idController = TextEditingController();
@@ -11,7 +13,7 @@ class LoginPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Padding(
-        padding: const EdgeInsets.all(12),
+        padding: const EdgeInsets.all(18),
         child: SingleChildScrollView(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
@@ -72,16 +74,17 @@ class LoginPage extends StatelessWidget {
                         ),
                       ),
                       padding: WidgetStateProperty.all(
-                        const EdgeInsets.symmetric(
-                            horizontal: 50, vertical: 15),
+                        const EdgeInsets.symmetric(horizontal: 50, vertical: 15),
                       ),
                     ),
                     onPressed: () {
-                      // TODO Implement Login
+                      // Simulate authentication
+                      AuthService.login();
+                      Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (_) => TeamList()));
                     },
-                    child: FontHelper.customFont(
-                        'Login', 24, FontWeight.w600, Colors.white),
+                    child: FontHelper.customFont('Login', 24, FontWeight.w600, Colors.white),
                   ),
+
                   TextButton(
                     style: ButtonStyle(
                       backgroundColor: WidgetStateProperty.all(Colors.white),

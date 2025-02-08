@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:hackathena_25/views/login_page.dart';
 
-void main(){
+
+void main() {
   runApp(const MyApp());
 }
 
@@ -11,8 +12,8 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: LoginPage(),
       debugShowCheckedModeBanner: false,
+      home: LoginPage(),
     );
   }
 }
